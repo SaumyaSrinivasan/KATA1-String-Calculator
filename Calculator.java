@@ -15,15 +15,24 @@ public class Calculator{
      
      private static String[] todigits(String numbers){
           if(numbers.startsWith("//")){
+               return eliminateCustomDelimiter(numbers);
+          }
+          else{
+            return eliminateNewLineOfString(numbers);
+          }
+     }
+     
+     private static String[] eliminateNewLineOfString(String numbers){
+            String[] digit = numbers.split(", | \n");
+            return digit;
+     }
+     
+     private static String[] eliminateCustomDelimiter(String numbers){
                Matcher m=Pattern.compile("//(.)\n(.*)").matcher(numbers);
                m.matches();
                String variousDelimiter = m.group(1);
                String num=m.group(2);
                return num.split(variousDelimiter);
-          else{
-            String[] digit = numbers.split(", | \n");
-            return digit;
-          }
      }
      
      private static Converter<String,Integer> toIntValue(){
