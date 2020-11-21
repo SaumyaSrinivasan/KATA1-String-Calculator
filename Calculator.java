@@ -14,8 +14,16 @@ public class Calculator{
      }
      
      private static String[] todigits(String numbers){
-          String[] digit = numbers.split(", | \n");
-          return digit;
+          if(numbers.startsWith("//")){
+               Matcher m=Pattern.compile("//(.)\n(.*)").matcher(numbers);
+               m.matches();
+               String variousDelimiter = m.group(1);
+               String num=m.group(2);
+               return num.split(variousDelimiter);
+          else{
+            String[] digit = numbers.split(", | \n");
+            return digit;
+          }
      }
      
      private static Converter<String,Integer> toIntValue(){
