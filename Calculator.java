@@ -2,6 +2,12 @@ package com.calculator;
 
 public class Calculator{
      public static int Add(String numbers){
-          return 0;
-          }
+         int num=0;
+         if(numbers.isEmpty()){
+              return num;
+         }
+          else{
+              num=Integer.parseInt(numbers); 
+              return num;
+       }
 }
