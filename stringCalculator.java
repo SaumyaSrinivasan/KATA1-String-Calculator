@@ -27,4 +27,9 @@ public class stringCalculator{
      public void ReturnSumAcceptingNewLine(){
           assertEquals(6, Calculator.Add("1\n2,3));
      }
+                                         
+     @Test
+     public void ReturnSumAcceptingDelimiters(){
+          assertEquals(3, Calculator.Add("//;\n1;2"));
+     }
 }
