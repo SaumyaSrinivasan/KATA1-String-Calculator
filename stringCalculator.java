@@ -12,4 +12,9 @@ public class stringCalculator{
      public void ReturnsNumberOnNumbervalue(){
           assertEquals(1,Calculator.Add("1"));
      }
+     
+     @Test
+     public void ReturnSumOfTwoDigitsSeperatedByComma(){
+          assertEquals(2,Calculator.Add("1,2"));
+     }
 }
