@@ -7,9 +7,14 @@ public class Calculator{
          }
          else if(numbers.contains(",")){
                String digits[]=numbers.split(",");
-               return Integer.parseInt(digits[0]) + Integer.parseInt(digits[1]);
+               return toIntValue(digits[0]) + toIntValue(digits[1]);
          }
          else{ 
-              return Integer.parseInt(numbers);
+              return toIntValue(numbers);
          }
+     }
+     
+     private static int toIntValue(String numbers) throws NumberFormatException{
+          return Integer.parseInt(numbers);
+     }
 }
