@@ -2,12 +2,14 @@ package com.calculator;
 
 public class Calculator{
      public static int Add(String numbers){
-         int num=0;
          if(numbers.isEmpty()){
-              return num;
+              return 0;
          }
-          else{
-              num=Integer.parseInt(numbers); 
-              return num;
-       }
+         else if(numbers.contains(",")){
+               String digits[]=numbers.split(",");
+               return Integer.parseInt(digits[0]) + Integer.parseInt(digits[1]);
+         }
+         else{ 
+              return Integer.parseInt(numbers);
+         }
 }
