@@ -7,12 +7,7 @@ public class Calculator{
          }
          else if(numbers.contains(",")){
                String digits[]=numbers.split(",");
-               List<Integer> list=convert(digits , new Converter<String,Integer>(){
-                    public Integer convert(String value)
-                    {
-                         return toIntValue(value);
-                    }
-               });
+               List<Integer> list=convert(digits , toIntValue());
               return sum(list).intValue();
          }
          else{ 
@@ -20,6 +15,13 @@ public class Calculator{
          }
      }
      
+     private static Converter<String,Integer> toIntValue(){
+          return new Conerter<String,Integer>() {
+               public Integer convert(String from){
+                    return toIntValue(from);
+               }
+          };
+     }
      private static int toIntValue(String numbers) throws NumberFormatException{
           return Integer.parseInt(numbers);
      }
