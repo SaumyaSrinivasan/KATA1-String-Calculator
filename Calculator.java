@@ -14,7 +14,7 @@ public class Calculator{
      }
      
      private static String[] todigits(String numbers){
-          String[] digit = numbers.split(",");
+          String[] digit = numbers.split(", | \n");
           return digit;
      }
      
