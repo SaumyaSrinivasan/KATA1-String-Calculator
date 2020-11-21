@@ -6,11 +6,16 @@ public class Calculator{
               return 0;
          }
          else {
-               String digits[]=numbers.split(",");
+               String digits[]= todigits(numbers);
                List<Integer> list=convert(digits , toIntValue());
               return sum(list).intValue();
          }
          
+     }
+     
+     private static String[] todigits(String numbers){
+          String[] digit = numbers.split(",");
+          return digit;
      }
      
      private static Converter<String,Integer> toIntValue(){
@@ -20,6 +25,7 @@ public class Calculator{
                }
           };
      }
+     
      private static int toIntValue(String numbers) throws NumberFormatException{
           return Integer.parseInt(numbers);
      }
