@@ -15,6 +15,6 @@ public class stringCalculator{
      
      @Test
      public void ReturnSumOfTwoDigitsSeperatedByComma(){
-          assertEquals(2,Calculator.Add("1,2"));
+          assertEquals(3,Calculator.Add("1,2"));
      }
 }
