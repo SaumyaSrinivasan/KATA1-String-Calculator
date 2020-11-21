@@ -5,6 +5,11 @@ import static org.junit.Assert.*;
 public class stringCalculator{
      @Test
       public void ReturnsZeroOnEmptyString(){
-          assertEquals(0,Calculator.add(""));
-          }
+          assertEquals(0,Calculator.Add(""));
+      }
+     
+     @Test
+     public void ReturnsNumberOnNumbervalue(){
+          assertEquals(1,Calculator.Add("1"));
+     }
 }
