@@ -22,4 +22,9 @@ public class stringCalculator{
      public void ReturnSumOfMulitpleValue(){
           assertEquals(6,Calculator.Add("1,2,3"));
      }
+     
+     @Test
+     public void ReturnSumAcceptingNewLine(){
+          assertEquals(6, Calculator.Add("1\n2,3));
+     }
 }
