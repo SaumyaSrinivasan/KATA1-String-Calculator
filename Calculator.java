@@ -7,7 +7,13 @@ public class Calculator{
          }
          else if(numbers.contains(",")){
                String digits[]=numbers.split(",");
-               return toIntValue(digits[0]) + toIntValue(digits[1]);
+               List<Integer> list=convert(digits , new Converter<String,Integer>(){
+                    public Integer convert(String value)
+                    {
+                         return toIntValue(value);
+                    }
+               });
+              return sum(list).intValue();
          }
          else{ 
               return toIntValue(numbers);
