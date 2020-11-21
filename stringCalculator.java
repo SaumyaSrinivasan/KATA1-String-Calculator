@@ -17,4 +17,9 @@ public class stringCalculator{
      public void ReturnSumOfTwoDigitsSeperatedByComma(){
           assertEquals(3,Calculator.Add("1,2"));
      }
+     
+     @Test
+     public void ReturnSumOfMulitpleValue(){
+          assertEquals(6,Calculator.Add("1,2,3"));
+     }
 }
